@@ -1,0 +1,19 @@
+# Web framework
+Django>=5.1,<5.2
+djangorestframework>=3.15,<4.0
+django-filter>=24.0,<25.0
+drf-spectacular>=0.28,<1.0
+django-environ>=0.12,<1.0
+
+# Database
+psycopg[binary]>=3.2,<4.0
+
+# Production server
+gunicorn>=22.0,<23.0
+
+# ML / data science
+scikit-learn>=1.5,<2.0
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+imbalanced-learn>=0.12,<1.0
+joblib>=1.4,<2.0
