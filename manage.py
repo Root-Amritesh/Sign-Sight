@@ -1,4 +1,4 @@
-.\.venv\Scripts\Activate.ps1#!/usr/bin/env python
+#!/usr/bin/env python
 """Django management script for Sign-Sight."""
 import os
 import sys
