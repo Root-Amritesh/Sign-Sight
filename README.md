@@ -123,5 +123,9 @@
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+## Contributors
+
+<a href="https://github.com/Root-Amritesh/Sign-Sight/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Root-Amritesh/Sign-Sight" />
+</a>
+
