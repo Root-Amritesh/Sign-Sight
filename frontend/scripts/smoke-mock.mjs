@@ -1,18 +1,4 @@
-/**
- * Integration smoke test for the in-browser mock API adapter.
- *
- * There is no test runner in this project, so rather than add one this script
- * drives the real adapter through Vite's SSR loader. That means the code under
- * test is the exact module the browser bundles — same TypeScript, same
- * `import.meta.env` handling, same module instances.
- *
- * It covers the behaviours the UI depends on and that unit tests would miss:
- * the spec's status-transition state machine, role-based access control, filter
- * and ordering semantics, the Django pagination envelope, audit-trail writes on
- * mutation, and that the replay engine actually mints records.
- *
- *   npm run test:mock
- */
+/* The entire mock code using smoke*/
 
 import { createServer } from 'vite'
 
