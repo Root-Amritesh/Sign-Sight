@@ -120,9 +120,6 @@
 * Analyst Drift page
 
 ---
-
-## Contributors
-
 ## Contributors
 
 <a href="https://github.com/Root-Amritesh/Sign-Sight/graphs/contributors">
