@@ -7,32 +7,32 @@
 ## Installation guide
 
 ### Frontend
-1) Unzip the folder and navigate to frontend directory
+1) Unzip the folder and navigate to frontend directory  
    ```cd Sign-Sight/frontend```
-1.1) For the first run we need to copy the ENVs to the actual env file
+1.1) For the first run we need to copy the ENVs to the actual env file  
    ```cp .env.example .env```
-3) Run
-   ``` npm install ``` and then
+2) Run
+   ``` npm install ```  
    ``` npm run dev ```
 You can also use the build version using ```npm run build``` and then running the final build generated in DIST but the project is not completed yet.
 
-#### Demo accounts for the front (Remove this from the final README or keep it)
-a) `analyst_1`: `analyst_pass_123` (The mock analyst account) 
+#### Demo accounts for the front (Remove this from the final README or keep it)  
+a) `analyst_1`: `analyst_pass_123` (The mock analyst account)  
 b) `admin`: `admin_pass_123` (The mock admin account)
 
 ### Backend
-1) Unzip the folder and navigate to the backend directory
+1) Unzip the folder and navigate to the backend directory  
    ```cd Sign-Sight/backend```
-2) Make the virtual env before installing the modules
+2) Make the virtual env before installing the modules  
    ``` python3 -m venv venv``` and then ```source venv/bin/activate``` (This is for linux, check how to do this for windows)
-3) Create the .env file by copying the example ENV file
+3) Create the .env file by copying the example ENV file  
    ```cp .env.example .env```
-5) Installation
+5) Installation  
    ```pip install -r requirements-dev.txt```
-6) Update the DB schema for the backend
+6) Update the DB schema for the backend  
    ```python manage.py migrate```
-7) Running
-      ```python manage.py runserver```
+7) Running  
+      ```python manage.py runserver```  
 This is the dev build, code still needs updating.
 
 ## Some snapshots from the dev build (frontend)
@@ -63,12 +63,12 @@ This is the dev build, code still needs updating.
 (Analyst Settings)
 <img width="1530" height="1058" alt="analyst_settings" src="https://github.com/user-attachments/assets/199ac627-1868-4460-a3f7-a02716862738" />
 
-### A few other pages to document
--> Analyst Ingest page
--> Analyst model health page
--> Analyst drift page
+### A few other pages to document  
+-> Analyst Ingest page  
+-> Analyst model health page  
+-> Analyst drift page  
 
-## Contriubutors
+## Contributors
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
