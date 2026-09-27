@@ -82,44 +82,35 @@
 ### General & Admin Views
 
 #### Landing Page
-<img width="1544" height="1055" alt="landing_page" src="[https://github.com/user-attachments/assets/3b30b71f-ee5f-4698-bc01-e1066f2e5c8a](https://github.com/user-attachments/assets/3b30b71f-ee5f-4698-bc01-e1066f2e5c8a)" />
+<img width="1544" height="1055" alt="landing_page" src="https://github.com/user-attachments/assets/3b30b71f-ee5f-4698-bc01-e1066f2e5c8a" /> 
 
 #### Sign In
-<img width="1527" height="1044" alt="sign_in" src="[https://github.com/user-attachments/assets/8f8fda31-45a1-42b1-b1af-c8c1b51da785](https://github.com/user-attachments/assets/8f8fda31-45a1-42b1-b1af-c8c1b51da785)" />
-
+<img width="1527" height="1044" alt="sign_in" src="https://github.com/user-attachments/assets/8f8fda31-45a1-42b1-b1af-c8c1b51da785" /> 
 #### Dashboard
-<img width="1532" height="1059" alt="dashboard" src="[https://github.com/user-attachments/assets/2c67ed8d-4b77-4aa1-b4b3-ee2ac9032b7f](https://github.com/user-attachments/assets/2c67ed8d-4b77-4aa1-b4b3-ee2ac9032b7f)" />
-
+<img width="1532" height="1059" alt="dashboard" src="https://github.com/user-attachments/assets/2c67ed8d-4b77-4aa1-b4b3-ee2ac9032b7f" /> 
 #### Alerts
-<img width="1532" height="1050" alt="alerts" src="[https://github.com/user-attachments/assets/587cb5dd-222a-4efa-9c9f-a2bf98fdb7e9](https://github.com/user-attachments/assets/587cb5dd-222a-4efa-9c9f-a2bf98fdb7e9)" />
-
+<img width="1532" height="1050" alt="alerts" src="https://github.com/user-attachments/assets/587cb5dd-222a-4efa-9c9f-a2bf98fdb7e9" /> 
 #### Ingest Mock Data
-<img width="1528" height="1051" alt="mock" src="[https://github.com/user-attachments/assets/24fab963-c4cb-492e-a43a-d12ce2d43851](https://github.com/user-attachments/assets/24fab963-c4cb-492e-a43a-d12ce2d43851)" />
-
+<img width="1528" height="1051" alt="mock" src="https://github.com/user-attachments/assets/24fab963-c4cb-492e-a43a-d12ce2d43851" /> 
 #### Model Health
-<img width="1528" height="1050" alt="health" src="[https://github.com/user-attachments/assets/97c864b5-9b3b-4570-a5b3-f72e6cb400bb](https://github.com/user-attachments/assets/97c864b5-9b3b-4570-a5b3-f72e6cb400bb)" />
-
+<img width="1528" height="1050" alt="health" src="https://github.com/user-attachments/assets/97c864b5-9b3b-4570-a5b3-f72e6cb400bb" /> 
 #### Drift
-<img width="1534" height="1057" alt="drift" src="[https://github.com/user-attachments/assets/6abe0645-cba4-42e4-8487-49f966a31f2e](https://github.com/user-attachments/assets/6abe0645-cba4-42e4-8487-49f966a31f2e)" />
-
+<img width="1534" height="1057" alt="drift" src="https://github.com/user-attachments/assets/6abe0645-cba4-42e4-8487-49f966a31f2e" /> 
 #### Model Registry
-<img width="1533" height="1059" alt="model_reg" src="[https://github.com/user-attachments/assets/9d2d503c-5fcb-4c9f-aacc-0127f4c1caba](https://github.com/user-attachments/assets/9d2d503c-5fcb-4c9f-aacc-0127f4c1caba)" />
-
+<img width="1533" height="1059" alt="model_reg" src="https://github.com/user-attachments/assets/9d2d503c-5fcb-4c9f-aacc-0127f4c1caba" /> 
 #### Audit Logs
-<img width="1541" height="1056" alt="log" src="[https://github.com/user-attachments/assets/9cc42565-c522-4cb0-9c92-6c807581163e](https://github.com/user-attachments/assets/9cc42565-c522-4cb0-9c92-6c807581163e)" />
-
+<img width="1541" height="1056" alt="log" src="https://github.com/user-attachments/assets/9cc42565-c522-4cb0-9c92-6c807581163e" /> 
 #### Admin Settings
-<img width="1529" height="1051" alt="admin_settings" src="[https://github.com/user-attachments/assets/e17a5fd5-eee4-426e-b4ee-7958c1f3f758](https://github.com/user-attachments/assets/e17a5fd5-eee4-426e-b4ee-7958c1f3f758)" />
-
+ <img width="1529" height="1051" alt="admin_settings" src="https://github.com/user-attachments/assets/e17a5fd5-eee4-426e-b4ee-7958c1f3f758" />
+ 
 ---
 
 ### Analyst Views
 
 #### Analyst Dashboard
-<img width="1534" height="1060" alt="analyst_dash" src="[https://github.com/user-attachments/assets/801964d8-c20d-403a-977f-9eefbab12e50](https://github.com/user-attachments/assets/801964d8-c20d-403a-977f-9eefbab12e50)" />
-
+<img width="1534" height="1060" alt="analyst_dash" src="https://github.com/user-attachments/assets/801964d8-c20d-403a-977f-9eefbab12e50" /> 
 #### Analyst Settings
-<img width="1530" height="1058" alt="analyst_settings" src="[https://github.com/user-attachments/assets/199ac627-1868-4460-a3f7-a02716862738](https://github.com/user-attachments/assets/199ac627-1868-4460-a3f7-a02716862738)" />
+<img width="1530" height="1058" alt="analyst_settings" src="https://github.com/user-attachments/assets/199ac627-1868-4460-a3f7-a02716862738" /> 
 
 ---
 
