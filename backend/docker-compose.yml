@@ -1,0 +1,36 @@
+sevrices: 
+  db:
+    image: postgres:latest 
+    container_name: db
+    restart: "no"
+    enviroment:
+      POSTGRES_DB: ${postdb}
+      POSTGRES_USER: ${post_user}
+      POSTGRES_PASSWORD: {post_pass}
+    volumes:
+      - ./data/postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isread -U ${post_user} -d ${post_db}"]
+      interval: 10s
+      timout: 5s
+      retries: 5 
+    network:
+      - sign-net
+  backend:
+    container_name: backend
+    restart: "no"
+    env_file:
+      - .env
+    enviroment:
+      - post_host=db 
+    volumes:
+      - ./backend:/app 
+    networks:
+      - sign-net
+    depends_on:
+      db:
+        condition: services_healthy
+netowork:
+  sign-net:
+    driver: bridge
+  
