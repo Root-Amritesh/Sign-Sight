@@ -1,5 +1,5 @@
 echo "Downloading MachineLearningCSV.zip..."
-
+curl -L -o CICIDS2017_improved.zip https://intrusion-detection.distrinet-research.be/CNS2022/Datasets/CICIDS2017_improved.zip
 curl -L \
   "https://huggingface.co/<YOUR_DATASET_REPO>/resolve/main/MachineLearningCSV.zip?download=true" \
   -o "$ZIP_FILE"
