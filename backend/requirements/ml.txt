@@ -1,0 +1,6 @@
+# ML Serving (inference only)
+joblib>=1.4,<1.5
+scikit-learn>=1.5,<1.6
+lightgbm>=4.5,<5.0
+pandas>=2.2,<2.3
+numpy>=1.26,<2.0
