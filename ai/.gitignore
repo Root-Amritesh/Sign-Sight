@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Datasets are large and reproducible via datasets/data.sh
+datasets/*.zip
+datasets/**/*.csv
+
+# Trained artefacts: regenerate with `python -m model.train`.
+# The model card and evaluation report are small and worth committing;
+# the .joblib binaries are not.
+model/artifacts/*.joblib
+model/artifacts/*.csv
+model/artifacts/*.json
+
+# Scratch
+*.log
+.ipynb_checkpoints/
+.DS_Store

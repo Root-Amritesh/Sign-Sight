@@ -1,0 +1,12 @@
+
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from . import views
+
+router = DefaultRouter()
+router.register(r'config', views.ConfigViewSet, basename='config')
+router.register(r'', views.AlertViewSet, basename='alert')
+
+urlpatterns = [
+    path('', include(router.urls)),
+]

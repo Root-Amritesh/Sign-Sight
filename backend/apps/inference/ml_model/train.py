@@ -483,17 +483,6 @@ def export_artifacts(run: dict, cfg: NIDSConfig) -> Path:
         out / "feature_importance.csv", index=False
     )
 
-    # Save OOF probabilities and labels for visualization (score distributions)
-    if "oof_proba" in run and "y" in run:
-        np.save(out / "oof_proba.npy", run["oof_proba"])
-        np.save(out / "oof_labels.npy", run["y"])
-
-    # Save per-family breakdown for visualization
-    if "evaluation" in run and "stage1_ablation" in run["evaluation"]:
-        ablation = run["evaluation"]["stage1_ablation"]
-        if "per_family" in ablation:
-            save_json(ablation["per_family"], out / "per_family.json")
-
     frame = run["frame"]
     sample = frame.sample(n=min(50_000, len(frame)), random_state=cfg.random_state)
     alerts = [a for a in model.triage(sample) if a["verdict"].startswith("ATTACK")]
