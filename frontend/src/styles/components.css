@@ -1,0 +1,695 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Component primitives — panels, badges, buttons, fields, tables, meters
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Panel ────────────────────────────────────────────────────────── */
+
+.panel {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-panel);
+  backdrop-filter: blur(14px) saturate(1.1);
+}
+
+.panel-pad {
+  padding: 1.125rem 1.25rem;
+}
+
+.panel-flush {
+  overflow: hidden;
+}
+
+/* Panel header: index + title on the left, actions on the right. */
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8125rem 1.125rem;
+  border-bottom: 1px solid var(--line);
+  min-height: 3rem;
+}
+
+.panel-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.panel-title .micro {
+  font-size: var(--fs-micro);
+}
+
+.panel-body {
+  padding: 1.125rem;
+}
+
+/* Corner brackets — the signature detail. Applied to hero panels only,
+   since they cost visual weight. */
+.bracketed {
+  position: relative;
+}
+
+.bracketed::before,
+.bracketed::after {
+  content: '';
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--cyan-line);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bracketed::before {
+  top: -1px;
+  left: -1px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.bracketed::after {
+  right: -1px;
+  bottom: -1px;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.25rem;
+  padding: 0 0.875rem;
+  border: 1px solid var(--line-mid);
+  border-radius: var(--r-sm);
+  background: rgba(18, 27, 42, 0.7);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease),
+    box-shadow var(--t-med) var(--ease);
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--line-strong);
+  background: var(--panel-hover);
+  color: #fff;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border-color: var(--cyan-line);
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.22), rgba(34, 211, 238, 0.08));
+  color: #d6f7ff;
+  box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+}
+
+.btn-primary:hover:not(:disabled) {
+  border-color: var(--cyan);
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.32), rgba(34, 211, 238, 0.12));
+  box-shadow: var(--glow-cyan);
+  color: #fff;
+}
+
+.btn-danger {
+  border-color: rgba(244, 63, 94, 0.42);
+  background: rgba(244, 63, 94, 0.12);
+  color: #ffd7de;
+}
+
+.btn-danger:hover:not(:disabled) {
+  border-color: var(--danger);
+  background: rgba(244, 63, 94, 0.2);
+  box-shadow: var(--glow-danger);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ink-dim);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--panel-hover);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-sm {
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  font-size: var(--fs-micro);
+}
+
+.btn-lg {
+  height: 2.75rem;
+  padding: 0 1.375rem;
+  font-size: var(--fs-sm);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-icon {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+/* ── Badges & chips ───────────────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  height: 1.375rem;
+  padding: 0 0.4375rem;
+  border: 1px solid var(--line-mid);
+  border-radius: var(--r-xs);
+  background: rgba(20, 30, 45, 0.6);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.badge-critical {
+  border-color: rgba(255, 45, 85, 0.45);
+  background: var(--sev-critical-soft);
+  color: #ff8ca3;
+}
+.badge-high {
+  border-color: rgba(251, 122, 60, 0.42);
+  background: var(--sev-high-soft);
+  color: #ffb08a;
+}
+.badge-medium {
+  border-color: rgba(242, 203, 45, 0.4);
+  background: var(--sev-medium-soft);
+  color: #f5de7a;
+}
+.badge-low {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: var(--sev-low-soft);
+  color: #8fd6fb;
+}
+.badge-info {
+  border-color: rgba(127, 142, 166, 0.4);
+  background: var(--sev-info-soft);
+  color: #a7b4c6;
+}
+
+.badge-ok {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: var(--ok-soft);
+  color: #6ee7b7;
+}
+.badge-warn {
+  border-color: rgba(251, 191, 36, 0.42);
+  background: var(--warn-soft);
+  color: #fcd34d;
+}
+.badge-danger {
+  border-color: rgba(244, 63, 94, 0.45);
+  background: var(--danger-soft);
+  color: #fda4b0;
+}
+.badge-cyan {
+  border-color: var(--cyan-line);
+  background: var(--cyan-soft);
+  color: #7de8f8;
+}
+.badge-violet {
+  border-color: var(--violet-line);
+  background: var(--violet-soft);
+  color: #d6b4fe;
+}
+
+.badge-lg {
+  height: 1.625rem;
+  padding: 0 0.5625rem;
+  font-size: var(--fs-xs);
+}
+
+/* Live "streaming" dot. */
+.pulse-dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: ss-pulse-ring 2s var(--ease-out-expo) infinite;
+}
+
+/* ── Key/value grid — used everywhere in detail panels ────────────── */
+
+.kv {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, auto) 1fr;
+  gap: 0.4375rem 1rem;
+  align-items: baseline;
+}
+
+.kv dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.kv dd {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  margin: 0;
+  word-break: break-word;
+}
+
+/* ── Fields ───────────────────────────────────────────────────────── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.field > label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  height: 2.25rem;
+  padding: 0 0.625rem;
+  background: rgba(4, 7, 13, 0.75);
+  border: 1px solid var(--line-mid);
+  border-radius: var(--r-sm);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease);
+}
+
+.textarea {
+  height: auto;
+  min-height: 5rem;
+  padding: 0.5rem 0.625rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--ink-ghost);
+}
+
+.input:hover,
+.select:hover,
+.textarea:hover {
+  border-color: var(--line-strong);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--cyan-line);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+  background: rgba(6, 11, 19, 0.9);
+}
+
+.input-error {
+  border-color: rgba(244, 63, 94, 0.5);
+}
+
+.field-error {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: #fda4b0;
+}
+
+.select {
+  appearance: none;
+  padding-right: 1.75rem;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-faint) 50%),
+    linear-gradient(135deg, var(--ink-faint) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 9px) 50%;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.select option {
+  background: var(--panel-solid);
+  color: var(--ink);
+}
+
+/* Checkbox styled as a cyber toggle. */
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  cursor: pointer;
+  user-select: none;
+}
+
+.check input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  background: rgba(4, 7, 13, 0.8);
+  display: grid;
+  place-content: center;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.check input:checked {
+  background: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.check input:checked::after {
+  content: '';
+  width: 7px;
+  height: 4px;
+  border-left: 2px solid #04121a;
+  border-bottom: 2px solid #04121a;
+  transform: rotate(-45deg) translate(0.5px, -1px);
+}
+
+.check input:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* ── Tables ───────────────────────────────────────────────────────── */
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: left;
+  padding: 0.5625rem 0.875rem;
+  background: rgba(8, 13, 22, 0.97);
+  border-bottom: 1px solid var(--line-mid);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-dim);
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: background var(--t-fast) var(--ease);
+}
+
+.table tbody tr:hover {
+  background: rgba(24, 36, 55, 0.42);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table .cell-strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.table .num {
+  text-align: right;
+}
+
+/* Clickable row → becomes a link and gets a cyan edge on hover. */
+.row-link {
+  cursor: pointer;
+}
+
+.row-link td:first-child {
+  box-shadow: inset 2px 0 0 transparent;
+  transition: box-shadow var(--t-fast) var(--ease);
+}
+
+.row-link:hover td:first-child {
+  box-shadow: inset 2px 0 0 var(--cyan);
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  gap: 0.125rem;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+.tab {
+  position: relative;
+  padding: 0.5rem 0.8125rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.tab:hover {
+  color: var(--ink-dim);
+}
+
+.tab[aria-selected='true'] {
+  color: var(--cyan);
+}
+
+.tab[aria-selected='true']::after {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: -1px;
+  height: 2px;
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+}
+
+/* ── Meter (horizontal bar with optional threshold ticks) ─────────── */
+
+.meter {
+  position: relative;
+  height: 5px;
+  border-radius: var(--r-pill);
+  background: rgba(120, 160, 200, 0.12);
+  overflow: hidden;
+}
+
+.meter-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: var(--r-pill);
+  background: var(--cyan);
+  transition: width var(--t-slow) var(--ease-out-expo);
+}
+
+/* In-progress task bar: moving diagonal stripes. */
+.meter-fill-striped {
+  background-image: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.22) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.22) 75%,
+    transparent 75%
+  );
+  background-size: 28px 28px;
+  animation: ss-bar-stripes 700ms linear infinite;
+}
+
+/* ── Skeleton loading ─────────────────────────────────────────────── */
+
+.skel {
+  border-radius: var(--r-sm);
+  background: linear-gradient(
+    90deg,
+    rgba(120, 160, 200, 0.07) 0%,
+    rgba(120, 160, 200, 0.14) 40%,
+    rgba(120, 160, 200, 0.07) 80%
+  );
+  background-size: 420px 100%;
+  animation: ss-shimmer 1.5s linear infinite;
+}
+
+/* ── Empty state ──────────────────────────────────────────────────── */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--ink-faint);
+}
+
+.empty-glyph {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--ink-ghost);
+  letter-spacing: 0.2em;
+}
+
+/* ── Callout / note blocks ────────────────────────────────────────── */
+
+.note {
+  display: flex;
+  gap: 0.625rem;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid var(--line-mid);
+  border-left-width: 2px;
+  border-radius: var(--r-sm);
+  background: rgba(14, 21, 35, 0.6);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--ink-dim);
+}
+
+.note-info {
+  border-left-color: var(--cyan);
+}
+.note-warn {
+  border-left-color: var(--warn);
+  background: rgba(251, 191, 36, 0.05);
+}
+.note-danger {
+  border-left-color: var(--danger);
+  background: rgba(244, 63, 94, 0.05);
+}
+.note-ok {
+  border-left-color: var(--ok);
+  background: rgba(52, 211, 153, 0.05);
+}
+.note-violet {
+  border-left-color: var(--violet);
+  background: rgba(168, 85, 247, 0.05);
+}
+
+/* ── Divider with centred label ───────────────────────────────────── */
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink-ghost);
+}
+
+.rule::before,
+.rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-mid), transparent);
+}
+
+/* ── Scroll fade wrapper for long mono blocks ────────────────────── */
+
+.codeblock {
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: rgba(3, 6, 11, 0.85);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.7;
+  color: var(--ink-dim);
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
